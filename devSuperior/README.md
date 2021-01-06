@@ -18,7 +18,7 @@ Technologies: Java, VSCode, RestClient, PostGreSQL
      - [x] Seed
   * Criar endpoints (testes com RestClientExt .http )
      - [x] [GET] /products
-     - [ ] [GET] /orders
+     - [x] [GET] /orders
     -  [ ] [POST] /orders
      - [ ] [PUT] /orders/{id}/delivered
   * Validar perfil dev
