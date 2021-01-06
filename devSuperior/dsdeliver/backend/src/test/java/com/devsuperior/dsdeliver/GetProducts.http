@@ -1,0 +1,5 @@
+GET http://localhost:8080/products 
+content-type: application/json
+//Authorization: 08683915-c892-404e-8b0b-b8f01d418586
+
+###

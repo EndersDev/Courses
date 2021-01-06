@@ -1,7 +1,9 @@
-# devSuperior Project
+# DevSuperior Project
 
 Simple delivery 
-assets: https://github.com/devsuperior/sds2
+Assets: https://github.com/devsuperior/sds2
+
+[Entendendo o padrão DTO](https://medium.com/@msealvial/blindando-sua-api-spring-boot-com-o-padr%C3%A3o-dto-44f97020d1a0)
 
 ## Checklist
   * Setup inicial do projeto
@@ -13,7 +15,7 @@ assets: https://github.com/devsuperior/sds2
      - [x] Mapeamento objeto-relacional
      - [x] Seed
   * Criar endpoints
-     - [ ] [GET] /products
+     - [x] [GET] /products
      - [ ] [GET] /orders
     -  [ ] [POST] /orders
      - [ ] [PUT] /orders/{id}/delivered
