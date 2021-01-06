@@ -1,0 +1,16 @@
+GET http://localhost:8080/products 
+content-type: application/json
+
+###
+GET http://localhost:8080/orders
+content-type: application/json
+
+###
+POST http://localhost:8080/orders
+content-type: application/json
+
+###
+PUT http://localhost:8080/orders/{id}/delivered
+content-type: application/json
+
+###

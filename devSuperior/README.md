@@ -5,6 +5,8 @@ Assets: https://github.com/devsuperior/sds2
 
 [Entendendo o padrão DTO](https://medium.com/@msealvial/blindando-sua-api-spring-boot-com-o-padr%C3%A3o-dto-44f97020d1a0)
 
+Technologies: Java, VSCode, RestClient, PostGreSQL
+
 ## Checklist
   * Setup inicial do projeto
      - [x] Dependências
@@ -14,7 +16,7 @@ Assets: https://github.com/devsuperior/sds2
      - [x] Entidades e relacionamentos
      - [x] Mapeamento objeto-relacional
      - [x] Seed
-  * Criar endpoints
+  * Criar endpoints (testes com RestClientExt .http )
      - [x] [GET] /products
      - [ ] [GET] /orders
     -  [ ] [POST] /orders
