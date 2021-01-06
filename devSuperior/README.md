@@ -9,9 +9,9 @@ assets: https://github.com/devsuperior/sds2
      - [x] Arquivos .properties
      - [x]  Configuração de segurança
   * Modelo de domínio
-     - [ ] Entidades e relacionamentos
-     - [ ] Mapeamento objeto-relacional
-     - [ ] Seed
+     - [x] Entidades e relacionamentos
+     - [x] Mapeamento objeto-relacional
+     - [x] Seed
   * Criar endpoints
      - [ ] [GET] /products
      - [ ] [GET] /orders
