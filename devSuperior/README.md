@@ -19,7 +19,7 @@ Technologies: Java, VSCode, RestClient, PostGreSQL
   * Criar endpoints (testes com RestClientExt .http )
      - [x] [GET] /products
      - [x] [GET] /orders
-    -  [ ] [POST] /orders
+    -  [x] [POST] /orders
      - [ ] [PUT] /orders/{id}/delivered
   * Validar perfil dev
      - [ ] Base de dados Postgres local

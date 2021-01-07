@@ -9,6 +9,23 @@ content-type: application/json
 POST http://localhost:8080/orders
 content-type: application/json
 
+{
+    "address": "Rua Dedos, 10",
+    "latitude": -23.56168,
+    "longitude": -46.656139,
+    "products": [
+      {
+        "id": 5
+      },
+      {
+        "id": 7
+      },
+      {
+        "id":2
+      }
+    ]
+}
+
 ###
 PUT http://localhost:8080/orders/{id}/delivered
 content-type: application/json
