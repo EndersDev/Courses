@@ -22,12 +22,12 @@ Technologies: Java, VSCode, RestClient, PostGreSQL
     -  [x] [POST] /orders
      - [x] [PUT] /orders/{id}/delivered
   * Validar perfil dev
-     - [ ] Base de dados Postgres local
-     - [ ] Testar todos endpoints
+     - [x] Base de dados Postgres local
+     - [x] Testar todos endpoints
   * Preparar projeto para implantação
-     - [ ] Arquivo system.properties
-     - [ ] Profile prod -> commit
+     - [x] Arquivo system.properties
+     - [x] Profile prod -> commit
   * Implantar projeto no Heroku
-     - [ ] Criar app e provisionar Postgres
-     - [ ] Criar base de dados remota
-     - [ ] Executar comandos no Heroku CLI
+     - [x] Criar app e provisionar Postgres
+     - [x] Criar base de dados remota
+     - [x] Executar comandos no Heroku CLI
