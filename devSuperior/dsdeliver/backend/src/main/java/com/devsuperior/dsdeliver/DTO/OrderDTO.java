@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.devsuperior.dsdeliver.entities.Order;
-import com.devsuperior.dsdeliver.entities.Product;
 import com.devsuperior.dsdeliver.entities.OrderStatus;
 
 public class OrderDTO implements Serializable {
