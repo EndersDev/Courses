@@ -27,7 +27,7 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:8080/orders/{id}/delivered
+PUT http://localhost:8080/orders/1/delivered
 content-type: application/json
 
 ###

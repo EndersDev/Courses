@@ -20,7 +20,7 @@ Technologies: Java, VSCode, RestClient, PostGreSQL
      - [x] [GET] /products
      - [x] [GET] /orders
     -  [x] [POST] /orders
-     - [ ] [PUT] /orders/{id}/delivered
+     - [x] [PUT] /orders/{id}/delivered
   * Validar perfil dev
      - [ ] Base de dados Postgres local
      - [ ] Testar todos endpoints
