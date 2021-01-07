@@ -31,3 +31,35 @@ PUT http://localhost:8080/orders/1/delivered
 content-type: application/json
 
 ###
+
+GET https://ender-dsdeliver.herokuapp.com/products 
+content-type: application/json
+
+###
+GET https://ender-dsdeliver.herokuapp.com/orders
+content-type: application/json
+
+###
+POST https://ender-dsdeliver.herokuapp.com/orders
+content-type: application/json
+
+{
+    "address": "Rua Dedos, 10",
+    "latitude": -23.56168,
+    "longitude": -46.656139,
+    "products": [
+      {
+        "id": 5
+      },
+      {
+        "id": 7
+      },
+      {
+        "id":2
+      }
+    ]
+}
+
+###
+PUT https://ender-dsdeliver.herokuapp.com/orders/1/delivered
+content-type: application/json
