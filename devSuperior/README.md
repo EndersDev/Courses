@@ -1,13 +1,22 @@
 # DevSuperior Project
 
-Simple delivery 
-Assets: https://github.com/devsuperior/sds2
+#### A simple delivery app 
 
-[Entendendo o padrão DTO](https://medium.com/@msealvial/blindando-sua-api-spring-boot-com-o-padr%C3%A3o-dto-44f97020d1a0)
+###### dsdeliver
 
-Technologies: Java, VSCode, RestClient, PostGreSQL
+📚 Notations: https://github.com/devsuperior/sds2
+<p>
+👨‍💻 Technologies: Spring<a id="spring" href="https://spring.io/"> <img width="20px" src="./assets/spring.svg"></a>, 
+                 Java<a id="java" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html"> <img width="20px" src="./assets/java.svg"></a>, 
+                 VSCode<a id="VSCode" href="https://code.visualstudio.com/"> <img width="20px" src="./assets/vscode.svg"></a>, 
+                 RestClient<a id="RestClient" href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"> <img width="20px" src="./assets/restclient.png"></a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                 PostgreSQL<a id="postGreSQL" href="https://www.postgresql.org/"> <img width="20px" src="./assets/postgresql.svg"></a>,
+                 Heroku<a id="Heroku" href="https://www.heroku.com/"> <img width="20px" src="./assets/heroku.svg"></a>,
+                 React<a id="React" href="https://reactjs.org/"> <img width="20px" src="./assets/react.svg"></a>,
+                 Javascript<a id="JS" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"> <img width="20px" src="./assets/javascript.svg"></a><br>
 
-## Checklist
+## Checklist Aula 1 [(additional data)](https://www.notion.so/enderdev/DevSuperior-382fcfed77494467b88b587d9447e633)
   * Setup inicial do projeto
      - [x] Dependências
      - [x] Arquivos .properties
@@ -16,7 +25,7 @@ Technologies: Java, VSCode, RestClient, PostGreSQL
      - [x] Entidades e relacionamentos
      - [x] Mapeamento objeto-relacional
      - [x] Seed
-  * Criar endpoints (testes com RestClientExt .http )
+  * Criar endpoints 
      - [x] [GET] /products
      - [x] [GET] /orders
     -  [x] [POST] /orders
