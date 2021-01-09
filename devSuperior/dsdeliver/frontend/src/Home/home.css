@@ -1,6 +1,5 @@
 .home-container {
 	padding-top: 100px;
-	height: calc(100vh - 254px);
 }
 
 .home-content {
@@ -24,7 +23,7 @@
 	line-height: 33px;
 	letter-spacing: -0.015em;
 	color: var(--secondary-color);
-	margin-bottom: 30px;
+	margin-bottom: px;
 }
 
 .home-btn-order {
