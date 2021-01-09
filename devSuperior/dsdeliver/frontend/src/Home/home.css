@@ -1,5 +1,6 @@
 .home-container {
-	padding-top: 100px;
+	padding-top: 60px;
+	padding-bottom: 10px;
 }
 
 .home-content {
@@ -53,7 +54,6 @@
 @media only screen and (max-width: 768px) {
 	.home-container {
 		height: auto;
-		margin-bottom: 50px;
 	}
 
 	.home-content {
@@ -83,6 +83,5 @@
 @media (max-height: 700px) {
 	.home-container {
 		height: auto;
-		margin-bottom: 30px;
 	}
 }
