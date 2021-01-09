@@ -1,6 +1,7 @@
 import './home.css'
 import Footer from '../Footer/Footer'
-import NavBar from '../NavBar/NavBar'
+import { Link } from 'react-router-dom'
+
 function Home() {
 	return (
 		<>
@@ -16,9 +17,9 @@ function Home() {
 							Escolha o seu pedido e em poucos minutos <br />
 							levaremos na sua porta
 						</h3>
-						<a href='' className='home-btn-order'>
+						<Link to='/orders' className='home-btn-order'>
 							FAZER PEDIDO
-						</a>
+						</Link>
 					</div>
 
 					<img

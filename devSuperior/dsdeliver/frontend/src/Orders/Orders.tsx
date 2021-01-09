@@ -1,12 +1,10 @@
-import NavBar from '../NavBar/NavBar'
+import Header from './Header'
+import './Orders.css'
 
 function Orders() {
 	return (
 		<>
-			Orders <div></div>
-			<div>
-				<div></div>
-			</div>
+			<Header />
 		</>
 	)
 }
