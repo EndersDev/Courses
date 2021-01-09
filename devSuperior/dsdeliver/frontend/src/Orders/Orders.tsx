@@ -1,10 +1,15 @@
-import Header from './Header'
 import './Orders.css'
+
+import Header from './Header'
+import ProductsList from './ProductsList/ProductsList'
 
 function Orders() {
 	return (
 		<>
-			<Header />
+			<div className='orders-container'>
+				<Header />
+				<ProductsList />
+			</div>
 		</>
 	)
 }
