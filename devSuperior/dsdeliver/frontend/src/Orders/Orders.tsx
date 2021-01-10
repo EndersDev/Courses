@@ -2,8 +2,9 @@ import './Orders.css'
 import { useEffect, useState } from 'react'
 import Header from './Header'
 import ProductsList from './ProductsList/ProductsList'
+import OrderLocation from './OrderLocation'
 import { Product } from './types'
-import fetchProducts from '../api'
+import { fetchProducts } from '../api'
 
 function Orders() {
 	const [products, setProducts] = useState<Product[]>([])
@@ -15,12 +16,11 @@ function Orders() {
 	}, [])
 
 	return (
-		<>
-			<div className='orders-container'>
-				<Header />
-				<ProductsList products={products} />
-			</div>
-		</>
+		<div className='orders-container'>
+			<Header />
+			<ProductsList products={products} />
+			<OrderLocation />
+		</div>
 	)
 }
 export default Orders
