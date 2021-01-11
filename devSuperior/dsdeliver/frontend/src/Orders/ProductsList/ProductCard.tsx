@@ -1,22 +1,18 @@
 import { Product } from '../types'
+import { formatPrice } from '../helpers'
 
 type Props = {
 	product: Product
+	isSelected: boolean
+	onSelectProduct: (product: Product) => void
 }
 
-function formatPrice(price: number) {
-	const formatter = new Intl.NumberFormat('pt-BR', {
-		style: 'currency',
-		currency: 'BRL',
-		minimumFractionDigits: 2,
-	})
-
-	return formatter.format(price)
-}
-
-function ProductCard({ product }: Props) {
+function ProductCard({ product, onSelectProduct, isSelected }: Props) {
 	return (
-		<div className='product-card-container'>
+		<div
+			className={`product-card-container ${isSelected ? 'selected' : ''}`}
+			onClick={() => onSelectProduct(product)}
+		>
 			<h3 className='product-card-title'>{product.name}</h3>
 
 			<img
