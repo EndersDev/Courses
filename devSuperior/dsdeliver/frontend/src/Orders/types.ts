@@ -7,10 +7,16 @@ export type Product = {
 }
 
 export type Place = {
-	label?: string
-	value?: string
+	label?: string //endereço
+	value?: string //numero
 	position: {
 		lat: number
 		lng: number
 	}
+}
+
+export type OrderLocationData = {
+	address: string
+	latitude: number
+	longitude: number
 }

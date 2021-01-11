@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { fetchLocalMapBox } from '../api'
-import { Place } from './types'
+import { Place, OrderLocationData } from './types'
 import AsyncSelect from 'react-select/async'
 
 const initialPosition = {
@@ -11,9 +11,13 @@ const initialPosition = {
 	},
 }
 
-function OrderLocation() {
-	const [address, setAddress] = useState<Place>(initialPosition)
+type Props = {
+	onChangeLocation: (location: OrderLocationData) => void
+}
 
+function OrderLocation({ onChangeLocation }: Props) {
+	const [address, setAddress] = useState<Place>(initialPosition)
+	//Vigia os valores de endereço do mapa
 	const loadOptions = async (
 		inputValue: string,
 		callback: (places: Place[]) => void
@@ -35,11 +39,11 @@ function OrderLocation() {
 
 	const handleChangeSelect = (place: Place) => {
 		setAddress(place)
-		// onChangeLocation({
-		// 	latitude: place.position.lat,
-		// 	longitude: place.position.lng,
-		// 	address: place.label!,
-		// })
+		onChangeLocation({
+			address: place.label!,
+			latitude: place.position.lat,
+			longitude: place.position.lng,
+		})
 	}
 
 	return (
@@ -57,13 +61,20 @@ function OrderLocation() {
 					/>
 				</div>
 
-				<MapContainer center={address.position} zoom={13} scrollWheelZoom>
+				<MapContainer
+					key={address.position.lat}
+					center={address.position}
+					zoom={13}
+					scrollWheelZoom
+				>
 					<TileLayer
 						attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 						url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 					/>
 					<Marker position={address.position}>
-						<Popup>Endereço Marcado</Popup>
+						<Popup>
+							{address.label}+{address.value}
+						</Popup>
 					</Marker>
 				</MapContainer>
 			</div>
