@@ -12,7 +12,7 @@ function Footer() {
 						alt='Instagram'
 					/>
 				</a>
-				<a href='' target='_new '>
+				<a href='/' target='_new '>
 					<img
 						src='https://raw.githubusercontent.com/devsuperior/sds2/master/aula2/Footer/linkedin.svg'
 						alt='LinkedIn'
