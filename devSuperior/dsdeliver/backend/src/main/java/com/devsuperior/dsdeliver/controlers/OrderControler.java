@@ -1,10 +1,10 @@
-package com.devsuperior.dsdeliver.controlers;
+package com.devsuperior.dsdelivery.controlers;
 
 import java.net.URI;
 import java.util.List;
 
-import com.devsuperior.dsdeliver.DTO.OrderDTO;
-import com.devsuperior.dsdeliver.services.OrderService;
+import com.devsuperior.dsdelivery.DTO.OrderDTO;
+import com.devsuperior.dsdelivery.services.OrderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

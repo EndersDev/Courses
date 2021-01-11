@@ -32,15 +32,15 @@ content-type: application/json
 
 ###
 
-GET https://ender-dsdeliver.herokuapp.com/products 
+GET https://ender-dsdelivery.herokuapp.com/products 
 content-type: application/json
 
 ###
-GET https://ender-dsdeliver.herokuapp.com/orders
+GET https://ender-dsdelivery.herokuapp.com/orders
 content-type: application/json
 
 ###
-POST https://ender-dsdeliver.herokuapp.com/orders
+POST https://ender-dsdelivery.herokuapp.com/orders
 content-type: application/json
 
 {
@@ -61,5 +61,5 @@ content-type: application/json
 }
 
 ###
-PUT https://ender-dsdeliver.herokuapp.com/orders/1/delivered
+PUT https://ender-dsdelivery.herokuapp.com/orders/1/delivered
 content-type: application/json

@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.devsuperior</groupId>
-	<artifactId>dsdeliver</artifactId>
+	<artifactId>dsdelivery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dsdeliver</name>
+	<name>dsdelivery</name>
 	<description>DevSuperiorProject</description>
 
 	<properties>

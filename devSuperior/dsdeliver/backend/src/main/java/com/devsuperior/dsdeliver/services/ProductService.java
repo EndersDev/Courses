@@ -1,11 +1,11 @@
-package com.devsuperior.dsdeliver.services;
+package com.devsuperior.dsdelivery.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.devsuperior.dsdeliver.DTO.ProductDTO;
-import com.devsuperior.dsdeliver.entities.Product;
-import com.devsuperior.dsdeliver.repositories.ProductRepository;
+import com.devsuperior.dsdelivery.DTO.ProductDTO;
+import com.devsuperior.dsdelivery.entities.Product;
+import com.devsuperior.dsdelivery.repositories.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
