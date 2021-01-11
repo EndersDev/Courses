@@ -1,18 +1,17 @@
-import './Orders.css'
+import { toast } from 'react-toastify'
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import ProductsList from './ProductsList/ProductsList'
 import OrderLocation from './OrderLocation'
 import { Product, OrderLocationData } from './types'
-import { fetchProducts } from '../api'
+import { fetchProducts, saveOrder } from '../api'
 import OrderSumary from './OrderSumary'
-import Footer from '../Footer/Footer'
 import { checkIsSelected } from './helpers'
+import './Orders.css'
 
 function Orders() {
 	const [products, setProducts] = useState<Product[]>([])
 	const [selectedProducts, setSelectedProducts] = useState<Product[]>([])
-
 	const [orderLocation, setOrderLocation] = useState<OrderLocationData>()
 	//Vigia os valores de endereço do pedido
 	const totalPrice = selectedProducts.reduce((sum, item) => {
@@ -35,6 +34,24 @@ function Orders() {
 			setSelectedProducts((previous) => [...previous, product])
 		}
 	}
+
+	const handleSubmit = () => {
+		const productsIds = selectedProducts.map(({ id }) => ({ id }))
+		const payload = {
+			...orderLocation!,
+			products: productsIds,
+		}
+
+		saveOrder(payload)
+			.then((response) => {
+				toast.error(`Pedido enviado com sucesso! Nº ${response.data.id}`)
+				setSelectedProducts([])
+			})
+			.catch(() => {
+				toast.warning('Erro ao enviar pedido')
+			})
+	}
+
 	return (
 		<div className='orders-container'>
 			<Header />
@@ -46,9 +63,13 @@ function Orders() {
 			<OrderLocation
 				onChangeLocation={(location) => setOrderLocation(location)}
 			/>
-			<OrderSumary amount={selectedProducts.length} totalPrice={totalPrice} />
-			<Footer />
+			<OrderSumary
+				amount={selectedProducts.length}
+				totalPrice={totalPrice}
+				onSubmit={handleSubmit}
+			/>
 		</div>
 	)
 }
+
 export default Orders
