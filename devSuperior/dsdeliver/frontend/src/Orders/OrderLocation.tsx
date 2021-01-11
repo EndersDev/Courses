@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { fetchLocalMapBox } from '../api';
-import { Place } from './types';
-import AsyncSelect from 'react-select/async';
+import { useState } from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { fetchLocalMapBox } from '../api'
+import { Place } from './types'
+import AsyncSelect from 'react-select/async'
 
 const initialPosition = {
 	position: {
 		lat: -23.5146528,
 		lng: -46.4273401,
 	},
-};
+}
 
 function OrderLocation() {
-	const [address, setAddress] = useState<Place>(initialPosition);
+	const [address, setAddress] = useState<Place>(initialPosition)
 
 	const loadOptions = async (
 		inputValue: string,
 		callback: (places: Place[]) => void
 	) => {
-		const response = await fetchLocalMapBox(inputValue);
+		const response = await fetchLocalMapBox(inputValue)
 		const places = response.data.features.map((item: any) => {
 			return {
 				label: item.place_name,
@@ -28,19 +28,19 @@ function OrderLocation() {
 					lng: item.center[0],
 				},
 				place: item.place_name,
-			};
-		});
-		callback(places);
-	};
+			}
+		})
+		callback(places)
+	}
 
 	const handleChangeSelect = (place: Place) => {
-		setAddress(place);
+		setAddress(place)
 		// onChangeLocation({
 		// 	latitude: place.position.lat,
 		// 	longitude: place.position.lng,
 		// 	address: place.label!,
 		// })
-	};
+	}
 
 	return (
 		<div className='order-location-container'>
@@ -53,7 +53,7 @@ function OrderLocation() {
 						placeholder='Digite o Endereço'
 						className='filter'
 						loadOptions={loadOptions}
-						//onChange={place => handleChangeSelect(place as Place)}
+						onChange={(place) => handleChangeSelect(place as Place)}
 					/>
 				</div>
 
@@ -68,7 +68,7 @@ function OrderLocation() {
 				</MapContainer>
 			</div>
 		</div>
-	);
+	)
 }
 
-export default OrderLocation;
+export default OrderLocation

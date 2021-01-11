@@ -6,7 +6,10 @@ function NavBar() {
 		<nav className='main-navbar'>
 			<div id='logo-text'>
 				<Link className='logo-text' to='/'>
-					<img src='https://raw.githubusercontent.com/devsuperior/sds2/master/aula2/Navbar/logo.svg' />
+					<img
+						alt='logo'
+						src='https://raw.githubusercontent.com/devsuperior/sds2/master/aula2/Navbar/logo.svg'
+					/>
 				</Link>
 				<Link className='logo-text' to='/'>
 					DS Delivery

@@ -23,6 +23,7 @@ function Home() {
 					</div>
 
 					<img
+						alt='home'
 						className='home-image'
 						src='https://raw.githubusercontent.com/devsuperior/sds2/master/aula2/home/main.svg'
 					/>
