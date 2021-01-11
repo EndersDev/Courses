@@ -15,6 +15,9 @@ function Orders() {
 
 	const [orderLocation, setOrderLocation] = useState<OrderLocationData>()
 	//Vigia os valores de endereço do pedido
+	const totalPrice = selectedProducts.reduce((sum, item) => {
+		return sum + item.price
+	}, 0)
 
 	useEffect(() => {
 		fetchProducts()
@@ -43,6 +46,7 @@ function Orders() {
 			<OrderLocation
 				onChangeLocation={(location) => setOrderLocation(location)}
 			/>
+			<OrderSumary amount={selectedProducts.length} totalPrice={totalPrice} />
 			<Footer />
 		</div>
 	)
