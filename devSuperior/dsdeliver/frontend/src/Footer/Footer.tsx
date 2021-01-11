@@ -28,5 +28,5 @@ function Footer() {
 		</footer>
 	)
 }
-
+//oteste
 export default Footer
