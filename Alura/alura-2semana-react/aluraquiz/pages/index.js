@@ -7,7 +7,7 @@ const BackGroundImage = styled.div`
   background-size: cover;
   background-position: center;
 `
-export const QuizContainer = styled.section`
+const QuizContainer = styled.section`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
@@ -40,15 +40,51 @@ const Widget = styled.div`
     line-height: 1;
   }
 `
+Widget.Header = styled.header`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 18px 32px;
+  background-color: ${({ theme }) => theme.colors.primary};
+
+  * {
+    margin: 0;
+  }
+`
+Widget.Content = styled.div`
+  padding: 24px 32px 32px 32px;
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+`
 
 export default function Home() {
   return (
     <BackGroundImage>
       <QuizContainer>
         <Widget>
-          <h1>Quizz Calculo</h1>
+          <Widget.Header>
+            <h1>Quizz Calculo</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <p>Quizz Pizza, Quizz salada</p>
+          </Widget.Content>
         </Widget>
-        <Widget>Titulo2</Widget>
+        <Widget>
+          <Widget.Header>
+            <h1>Confira outros Quizz</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <p>Quizz Pizza, Quizz salada</p>
+          </Widget.Content>
+        </Widget>
       </QuizContainer>
     </BackGroundImage>
   )
