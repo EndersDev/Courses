@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 import db from '../db.json'
-import { Widget } from './../src/components/Widget'
 
-const BackGroundImage = styled.div`
-  background-image: url(${db.bg});
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-`
+import Widget from '../src/components/Widget'
+import QuizLogo from '../src/components/QuizLogo'
+import QuizBackground from '../src/components/QuizBackground'
+import Footer from '../src/components/Footer'
+import GitHubCorner from '../src/components/GitHubCorner'
+
 const QuizContainer = styled.section`
   width: 100%;
   max-width: 350px;
@@ -21,25 +20,36 @@ const QuizContainer = styled.section`
 
 export default function Home() {
   return (
-    <BackGroundImage>
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Quizz Calculo</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Quizz Pizza, Quizz salada</p>
+            <p>{db.description}</p>
           </Widget.Content>
         </Widget>
+
         <Widget>
-          <Widget.Header>
-            <h1>Confira outros Quizz</h1>
-          </Widget.Header>
           <Widget.Content>
-            <p>Quizz Pizza, Quizz salada</p>
+            <h1>Outros Quizes</h1>
+
+            <p>
+              <ul>
+                <ui>Quiz de Quimica</ui>
+                <ui>Quiz de Quimica</ui>
+                <ui>Quiz de Quimica</ui>
+                <ui>Quiz de Quimica</ui>
+                <ui>Quiz de Quimica</ui>
+              </ul>
+            </p>
           </Widget.Content>
         </Widget>
+        <Footer />
       </QuizContainer>
-    </BackGroundImage>
+      <GitHubCorner projectUrl='https://github.com/endersdev' />
+    </QuizBackground>
   )
 }
