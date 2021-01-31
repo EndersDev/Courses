@@ -13,7 +13,7 @@ import { Button, Input } from './../src/components/StartForm'
 
 export default function Home() {
   const router = useRouter()
-  const [name, setName] = React.useState(db.player)
+  const [name, setName] = React.useState('')
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -47,7 +47,7 @@ export default function Home() {
               </Button>
               <br />
               <br />
-              <label>Jogador: {name}</label>
+              <label>Jogador: {name || db.player}</label>
             </form>
           </Widget.Content>
         </Widget>
