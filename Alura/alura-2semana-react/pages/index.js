@@ -6,6 +6,7 @@ import QuizLogo from '../src/components/QuizLogo'
 import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
+import StartForm from './../src/components/StartForm'
 
 const QuizContainer = styled.section`
   width: 100%;
@@ -29,6 +30,9 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
+            <br />
+            <br />
+            <StartForm />
           </Widget.Content>
         </Widget>
 
