@@ -1,25 +1,19 @@
-import styled from 'styled-components'
 import db from '../db.json'
+import { useRouter } from 'next/router'
 
 import Widget from '../src/components/Widget'
-import QuizLogo from '../src/components/QuizLogo'
-import QuizBackground from '../src/components/QuizBackground'
+import {
+  QuizLogo,
+  QuizBackground,
+  QuizContainer
+} from '../src/components/Quizzes'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
-import StartForm from './../src/components/StartForm'
-
-const QuizContainer = styled.section`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`
+import { Button, Input } from './../src/components/StartForm'
 
 export default function Home() {
+  const router = useRouter()
+  const [name, setName] = React.useState(db.player)
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -29,10 +23,32 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>{db.description}</p>
+            <h2>{db.description}</h2>
             <br />
             <br />
-            <StartForm />
+            <form
+              onSubmit={(infosDoEvento) => {
+                infosDoEvento.preventDefault()
+                router.push(`/quiz?name=${name}`)
+                //console.log('Fazendo uma submissão por meio do react')
+              }}
+            >
+              <Input
+                onChange={(infosDoEvento) => {
+                  //console.log(infosDoEvento.target.value)
+                  setName(infosDoEvento.target.value)
+                }}
+                placeholder="Insira seu Nome"
+                value={name}
+                name="Nome Do Usuario"
+              />
+              <Button type="submit" disabled={name.length === 0}>
+                Play
+              </Button>
+              <br />
+              <br />
+              <label>Jogador: {name}</label>
+            </form>
           </Widget.Content>
         </Widget>
 
