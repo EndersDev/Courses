@@ -6,32 +6,33 @@ import {
   QuizContainer
 } from '../src/components/Quizzes'
 import { Button } from '../src/components/StartForm'
-import shimmer from '../src/components/ShimmerComponents'
+import Loading from '../src/components/ShimmerComponents'
 
 /*TESTAR USAR OS PARAMETROS DO CHILDREN COMPONENT QUESTIONWIDGET*/
 
 //Shimmer
-function Shimmer() {
+function LoadingPage() {
   return (
     <Widget className="wrapper">
       <Widget.Header>
-        <lines className="shine"></lines>
+        <Loading.Line className="shine" />
       </Widget.Header>
-      <div className="box" />
       <Widget.Content>
-        <photo className="shine"></photo>
-        <shimmer.Parag className="box"></shimmer.Parag>
+        <Loading.Img className="shine" />
+        <p className="shine"></p>
         <form>
-          <div className="box">
+          <Loading.Alter />
+
+          <div className="shine">
             <div className="line"></div>
           </div>
-          <div className="box">
+          <div className="shine">
             <div className="line"></div>
           </div>
-          <div className="box">
+          <div className="shine">
             <div className="line"></div>
           </div>
-          <div className="box">
+          <div className="shine">
             <div className="line"></div>
           </div>
           <div className="but">
@@ -186,10 +187,8 @@ export default function QuizPage() {
             onSubmit={handleSubmitQuiz}
           />
         )}
-        {screenState === screenStates.LOADING && <photo className="shine" />}
-        {screenState === screenStates.RESULT && (
-          <div>Você acertou X questões, parabéns!</div>
-        )}
+        {screenState === screenStates.LOADING && <LoadingWidget />}
+        {screenState === screenStates.RESULT && <ResultWidget />}
       </QuizContainer>
     </QuizBackground>
   )
