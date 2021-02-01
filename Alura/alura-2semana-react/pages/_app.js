@@ -55,6 +55,16 @@ html, body {
 
 }*/
 
+.shine{
+
+background-size: 800px 400px;
+  display: inline-block;
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;}
   @keyframes placeholderShimmer {
     0% {
       background-position: -468px 0;

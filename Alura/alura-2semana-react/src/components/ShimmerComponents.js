@@ -1,17 +1,6 @@
 import styled from 'styled-components'
 
-const shimmer = styled.div`
-  background-size: 800px 400px;
-  display: inline-block;
-  position: relative;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: placeholderShimmer;
-  animation-timing-function: linear;
-`
-
-const Alter = styled(shimmer)`
+const Alter = styled.div`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.primary}40`} 0%,
@@ -40,7 +29,7 @@ const Alter = styled(shimmer)`
   }
 `
 
-const Line = styled(shimmer)`
+const Line = styled.div`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.primary}`} 0%,
@@ -56,7 +45,7 @@ const Line = styled(shimmer)`
   border-radius: ${({ theme }) => theme.borderRadius};
 `
 
-const Parag = styled(shimmer)`
+const Parag = styled.div`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.primary}`} 0%,
@@ -72,7 +61,7 @@ const Parag = styled(shimmer)`
   border-radius: ${({ theme }) => theme.borderRadius};
 `
 
-const IMG = styled(shimmer)`
+const IMG = styled.div`
   background: linear-gradient(
     to right,
     #f0f0f0 0%,
@@ -90,7 +79,7 @@ const IMG = styled(shimmer)`
   border-radius: ${({ theme }) => theme.borderRadius};
 `
 
-const But = styled(shimmer)`
+const But = styled.div`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.secondary}`} 0%,
@@ -125,18 +114,18 @@ const But = styled(shimmer)`
 const Loading = styled.div``
 
 Loading.Alter = () => {
-  return <Alter />
+  return <Alter className="shine" />
 }
 Loading.Line = () => {
-  return <Line />
+  return <Line className="shine" />
 }
 Loading.Parag = () => {
-  return <Parag />
+  return <Parag className="shine" />
 }
 Loading.Img = () => {
-  return <IMG />
+  return <IMG className="shine" />
 }
 Loading.Button = () => {
-  return <But />
+  return <But className="shine" />
 }
 export default Loading
