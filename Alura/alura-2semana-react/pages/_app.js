@@ -30,8 +30,9 @@ html, body {
     background-image: linear-gradient(
       to right,
       #f6f7f8 0%,
-      #edeef1 20%,
-      #f6f7f8 40%,
+      #8a8c91 33%,
+      #f6f7f8 50%,
+      #f6f7f8 66%,
       #f6f7f8 100%
     );
     background-repeat: no-repeat;
