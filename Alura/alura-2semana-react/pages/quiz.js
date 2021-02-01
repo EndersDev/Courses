@@ -10,11 +10,46 @@ import { Button } from '../src/components/StartForm'
 /*TESTAR USAR OS PARAMETROS DO CHILDREN COMPONENT QUESTIONWIDGET*/
 
 //tela carregamento
-function LoadingWidget() {
+function LoadingWidget({ ...props }) {
+  const style = { width: '100%', height: '150px', objectFit: 'cover' }
+  const { txt_h_carregamento, txt_p_carregamento } = [
+    'just text',
+    'question id something'
+  ]
+
+  const carregamento = {
+    question: 'qualquer pergunta',
+    alternatives: [
+      txt_h_carregamento,
+      txt_h_carregamento,
+      txt_h_carregamento,
+      txt_h_carregamento
+    ]
+  }
+
+  const { question, alternatives } = carregamento
   return (
     <Widget>
-      <Widget.Header>Carregando...</Widget.Header>
-      <Widget.Content>[Desafio do Loading]</Widget.Content>
+      <Widget.Header>
+        <h3>{txt_h_carregamento}</h3>
+      </Widget.Header>
+      <img alt="Imagem de Carregamento" style={style} src="/" />
+      <Widget.Content>
+        <h2>{txt_h_carregamento}</h2>
+        <p>{txt_p_carregamento}</p>
+        <form>
+          {alternatives.map((alternative, alternativeIndex) => {
+            const alternativeId = `alternative__${alternativeIndex}`
+            return (
+              <Widget.Topic as="label" htmlFor={alternativeId}>
+                <input id={alternativeId} name={question} type="radio" />
+                {alternative}
+              </Widget.Topic>
+            )
+          })}
+          <Button type="submit">{txt_h_carregamento}</Button>
+        </form>
+      </Widget.Content>
     </Widget>
   )
 }
@@ -84,11 +119,12 @@ export default function QuizPage() {
   const questionIndex = currentQuestion
   const question = db.questions[questionIndex]
 
+  /* // TESTANDO LOADING PAGE
   React.useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ)
     }, 1 * 1000)
-  }, [])
+  }, []) */
 
   function handleSubmitQuiz() {
     const nextQuestion = questionIndex + 1
@@ -111,9 +147,7 @@ export default function QuizPage() {
             onSubmit={handleSubmitQuiz}
           />
         )}
-
         {screenState === screenStates.LOADING && <LoadingWidget />}
-
         {screenState === screenStates.RESULT && (
           <div>Você acertou X questões, parabéns!</div>
         )}
