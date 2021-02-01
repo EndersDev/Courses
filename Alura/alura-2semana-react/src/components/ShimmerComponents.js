@@ -15,7 +15,9 @@ const Alter = styled(shimmer)`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.primary}40`} 0%,
+    ${({ theme }) => `${theme.colors.primary}40`} 33%,
     #fff 50%,
+    ${({ theme }) => `${theme.colors.primary}40`} 66%,
     ${({ theme }) => `${theme.colors.primary}40`} 100%
   );
   height: 39px;
@@ -42,7 +44,9 @@ const Line = styled(shimmer)`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.primary}`} 0%,
+    ${({ theme }) => `${theme.colors.primary}`} 33%,
     #fff 50%,
+    ${({ theme }) => `${theme.colors.primary}`} 66%,
     ${({ theme }) => `${theme.colors.primary}`} 100%
   );
   height: 20px;
@@ -56,7 +60,9 @@ const Parag = styled(shimmer)`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.primary}`} 0%,
+    ${({ theme }) => `${theme.colors.primary}`} 33%,
     #fff 50%,
+    ${({ theme }) => `${theme.colors.primary}`} 66%,
     ${({ theme }) => `${theme.colors.primary}`} 100%
   );
   width: 284px;
@@ -67,6 +73,14 @@ const Parag = styled(shimmer)`
 `
 
 const IMG = styled(shimmer)`
+  background: linear-gradient(
+    to right,
+    #f0f0f0 0%,
+    #f0f0f0 33%,
+    #fff 50%,
+    #f0f0f0 66%,
+    #f0f0f0 100%
+  );
   display: block !important;
   max-width: 400px;
   max-height: 400px;
@@ -80,7 +94,9 @@ const But = styled(shimmer)`
   background: linear-gradient(
     to right,
     ${({ theme }) => `${theme.colors.secondary}`} 0%,
+    ${({ theme }) => `${theme.colors.secondary}`} 33%,
     #fff 50%,
+    ${({ theme }) => `${theme.colors.secondary}`} 66%,
     ${({ theme }) => `${theme.colors.secondary}`} 100%
   );
   height: 39px;
