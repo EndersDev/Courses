@@ -6,12 +6,47 @@ import {
   QuizContainer
 } from '../src/components/Quizzes'
 import { Button } from '../src/components/StartForm'
+import shimmer from '../src/components/ShimmerComponents'
 
 /*TESTAR USAR OS PARAMETROS DO CHILDREN COMPONENT QUESTIONWIDGET*/
+
+//Shimmer
+function Shimmer() {
+  return (
+    <Widget className="wrapper">
+      <Widget.Header>
+        <shimmer.Line className="comment br animate"></shimmer.Line>
+      </Widget.Header>
+      <shimmer.IMG className="comment br animate" />
+      <Widget.Content>
+        <shimmer.Line className="comment br animate"></shimmer.Line>
+        <shimmer.Parag className="comment br animate"></shimmer.Parag>
+        <form>
+          <shimmer.Alter className="comment br animate">
+            <shimmer.Line className="comment br animate"></shimmer.Line>
+          </shimmer.Alter>
+          <shimmer.Alter className="comment br animate">
+            <shimmer.Line className="comment br animate"></shimmer.Line>
+          </shimmer.Alter>
+          <shimmer.Alter className="comment br animate">
+            <shimmer.Line className="comment br animate"></shimmer.Line>
+          </shimmer.Alter>
+          <shimmer.Alter className="comment br animate">
+            <shimmer.Line className="comment br animate"></shimmer.Line>
+          </shimmer.Alter>
+          <shimmer.But className="comment br animate">
+            <shimmer.Line className="comment br animate"></shimmer.Line>
+          </shimmer.But>
+        </form>
+      </Widget.Content>
+    </Widget>
+  )
+}
 
 //tela carregamento
 function LoadingWidget({ ...props }) {
   const style = { width: '100%', height: '150px', objectFit: 'cover' }
+
   const { txt_h_carregamento, txt_p_carregamento } = [
     'just text',
     'question id something'
@@ -33,7 +68,11 @@ function LoadingWidget({ ...props }) {
       <Widget.Header>
         <h3>{txt_h_carregamento}</h3>
       </Widget.Header>
-      <img alt="Imagem de Carregamento" style={style} src="/" />
+      <img
+        alt="Imagem de Carregamento"
+        style={{ objectfit: 'cover' }}
+        src="/"
+      />
       <Widget.Content>
         <h2>{txt_h_carregamento}</h2>
         <p>{txt_p_carregamento}</p>
@@ -147,7 +186,7 @@ export default function QuizPage() {
             onSubmit={handleSubmitQuiz}
           />
         )}
-        {screenState === screenStates.LOADING && <LoadingWidget />}
+        {screenState === screenStates.LOADING && <Shimmer />}
         {screenState === screenStates.RESULT && (
           <div>Você acertou X questões, parabéns!</div>
         )}

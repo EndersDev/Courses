@@ -22,7 +22,7 @@ const Widget = styled.div`
   }
 `
 Widget.Header = styled.header`
-  display: flex;
+  display: webkit flex;
   justify-content: flex-start;
   align-items: center;
   padding: 18px 32px;
