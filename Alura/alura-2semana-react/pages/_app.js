@@ -24,28 +24,36 @@ html, body {
   flex-direction: column;
 
 //SHIMMER
-
+/*animation 2
 .shine {
-    background: #f6f7f8;
-    background-image: linear-gradient(
-      to right,
-      #f6f7f8 0%,
-      #8a8c91 33%,
-      #f6f7f8 50%,
-      #f6f7f8 66%,
-      #f6f7f8 100%
+    background: linear-gradient(
+      to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%
     );
-    background-repeat: no-repeat;
-    background-size: 800px 400px;
-    display: inline-block;
-    position: relative;
+    background-size: 1000px 100%;
 
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-name: placeholderShimmer;
     animation-timing-function: linear;
   }
+  .conatiner{animation: fullView 0.5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}}
+@keyframes fullView {
+  100% {
+    width: 100%;
+  }
+}
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+}*/
 
   @keyframes placeholderShimmer {
     0% {

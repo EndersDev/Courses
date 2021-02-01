@@ -1,6 +1,23 @@
 import styled from 'styled-components'
 
-const Alter = styled.div`
+const shimmer = styled.div`
+  background-size: 800px 400px;
+  display: inline-block;
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+`
+
+const Alter = styled(shimmer)`
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => `${theme.colors.primary}40`} 0%,
+    #fff 50%,
+    ${({ theme }) => `${theme.colors.primary}40`} 100%
+  );
   height: 39px;
   width: 284px;
   outline: 0;
@@ -13,6 +30,7 @@ const Alter = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: 0.3s;
   display: block;
+  border-radius: ${({ theme }) => theme.borderRadius};
 
   &:hover,
   &:focus {
@@ -20,28 +38,51 @@ const Alter = styled.div`
   }
 `
 
-const Line = styled.div`
+const Line = styled(shimmer)`
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => `${theme.colors.primary}`} 0%,
+    #fff 50%,
+    ${({ theme }) => `${theme.colors.primary}`} 100%
+  );
   height: 20px;
   margin-top: 10px;
   width: 120px;
   max-width: 200px;
+  border-radius: ${({ theme }) => theme.borderRadius};
 `
 
-const Parag = styled.div`
+const Parag = styled(shimmer)`
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => `${theme.colors.primary}`} 0%,
+    #fff 50%,
+    ${({ theme }) => `${theme.colors.primary}`} 100%
+  );
   width: 284px;
   height: 40px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: ${({ theme }) => theme.borderRadius};
 `
 
-const IMG = styled.div`
+const IMG = styled(shimmer)`
   display: block !important;
   max-width: 400px;
   max-height: 400px;
   margin-top: 15px;
   width: 100%;
   height: 120px;
+  border-radius: ${({ theme }) => theme.borderRadius};
 `
 
-const But = styled.button`
+const But = styled(shimmer)`
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => `${theme.colors.secondary}`} 0%,
+    #fff 50%,
+    ${({ theme }) => `${theme.colors.secondary}`} 100%
+  );
   height: 39px;
   width: 284px;
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -68,18 +109,18 @@ const But = styled.button`
 const Loading = styled.div``
 
 Loading.Alter = () => {
-  return <Alter className="shine" />
+  return <Alter />
 }
 Loading.Line = () => {
-  return <Line className="shine" />
+  return <Line />
 }
 Loading.Parag = () => {
-  return <Parag className="shine" />
+  return <Parag />
 }
 Loading.Img = () => {
-  return <IMG className="shine" />
+  return <IMG />
 }
 Loading.Button = () => {
-  return <But className="shine" />
+  return <But />
 }
 export default Loading

@@ -6,7 +6,7 @@ import {
   QuizContainer
 } from '../src/components/Quizzes'
 import { Button } from '../src/components/StartForm'
-import Loading from '../src/components/LoadingComponents'
+import Loading from '../src/components/ShimmerComponents'
 
 /*TESTAR USAR OS PARAMETROS DO CHILDREN COMPONENT QUESTIONWIDGET*/
 
@@ -21,7 +21,6 @@ function LoadingWidget() {
         <Loading.Img />
         <Loading.Parag />
         <form>
-          <Loading.Alter />
           <Loading.Alter>
             <Loading.Line />
           </Loading.Alter>
