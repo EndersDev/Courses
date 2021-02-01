@@ -6,45 +6,44 @@ import {
   QuizContainer
 } from '../src/components/Quizzes'
 import { Button } from '../src/components/StartForm'
-import Loading from '../src/components/ShimmerComponents'
+import Loading from '../src/components/LoadingComponents'
 
 /*TESTAR USAR OS PARAMETROS DO CHILDREN COMPONENT QUESTIONWIDGET*/
 
 //Shimmer
-function LoadingPage() {
+function LoadingWidget() {
   return (
-    <Widget className="wrapper">
+    <Widget>
       <Widget.Header>
-        <Loading.Line className="shine" />
+        <Loading.Line />
       </Widget.Header>
       <Widget.Content>
-        <Loading.Img className="shine" />
-        <p className="shine"></p>
+        <Loading.Img />
+        <Loading.Parag />
         <form>
           <Loading.Alter />
-
-          <div className="shine">
-            <div className="line"></div>
-          </div>
-          <div className="shine">
-            <div className="line"></div>
-          </div>
-          <div className="shine">
-            <div className="line"></div>
-          </div>
-          <div className="shine">
-            <div className="line"></div>
-          </div>
-          <div className="but">
-            <div className="line"></div>
-          </div>
+          <Loading.Alter>
+            <Loading.Line />
+          </Loading.Alter>
+          <Loading.Alter>
+            <Loading.Line />
+          </Loading.Alter>
+          <Loading.Alter>
+            <Loading.Line />
+          </Loading.Alter>
+          <Loading.Alter>
+            <Loading.Line />
+          </Loading.Alter>
+          <Loading.Button>
+            <Loading.Line />
+          </Loading.Button>
         </form>
       </Widget.Content>
     </Widget>
   )
 }
 
-//tela carregamento
+/* esqueleto do carregamento
 function LoadingWidget({ ...props }) {
   const style = { width: '100%', height: '150px', objectFit: 'cover' }
 
@@ -93,6 +92,7 @@ function LoadingWidget({ ...props }) {
     </Widget>
   )
 }
+ */
 
 //questoes
 function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
@@ -146,13 +146,13 @@ function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
   )
 }
 
-const screenStates = {
-  QUIZ: 'QUIZ',
-  LOADING: 'LOADING',
-  RESULT: 'RESULT'
-}
-
 export default function QuizPage() {
+  const screenStates = {
+    QUIZ: 'QUIZ',
+    LOADING: 'LOADING',
+    RESULT: 'RESULT'
+  }
+
   const [screenState, setScreenState] = React.useState(screenStates.LOADING)
   const totalQuestions = db.questions.length
   const [currentQuestion, setCurrentQuestion] = React.useState(0)
