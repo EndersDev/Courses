@@ -15,28 +15,28 @@ function Shimmer() {
   return (
     <Widget className="wrapper">
       <Widget.Header>
-        <shimmer.Line className="comment br animate"></shimmer.Line>
+        <lines className="shine"></lines>
       </Widget.Header>
-      <shimmer.IMG className="comment br animate" />
+      <div className="box" />
       <Widget.Content>
-        <shimmer.Line className="comment br animate"></shimmer.Line>
-        <shimmer.Parag className="comment br animate"></shimmer.Parag>
+        <photo className="shine"></photo>
+        <shimmer.Parag className="box"></shimmer.Parag>
         <form>
-          <shimmer.Alter className="comment br animate">
-            <shimmer.Line className="comment br animate"></shimmer.Line>
-          </shimmer.Alter>
-          <shimmer.Alter className="comment br animate">
-            <shimmer.Line className="comment br animate"></shimmer.Line>
-          </shimmer.Alter>
-          <shimmer.Alter className="comment br animate">
-            <shimmer.Line className="comment br animate"></shimmer.Line>
-          </shimmer.Alter>
-          <shimmer.Alter className="comment br animate">
-            <shimmer.Line className="comment br animate"></shimmer.Line>
-          </shimmer.Alter>
-          <shimmer.But className="comment br animate">
-            <shimmer.Line className="comment br animate"></shimmer.Line>
-          </shimmer.But>
+          <div className="box">
+            <div className="line"></div>
+          </div>
+          <div className="box">
+            <div className="line"></div>
+          </div>
+          <div className="box">
+            <div className="line"></div>
+          </div>
+          <div className="box">
+            <div className="line"></div>
+          </div>
+          <div className="but">
+            <div className="line"></div>
+          </div>
         </form>
       </Widget.Content>
     </Widget>
@@ -186,7 +186,7 @@ export default function QuizPage() {
             onSubmit={handleSubmitQuiz}
           />
         )}
-        {screenState === screenStates.LOADING && <Shimmer />}
+        {screenState === screenStates.LOADING && <photo className="shine" />}
         {screenState === screenStates.RESULT && (
           <div>Você acertou X questões, parabéns!</div>
         )}
