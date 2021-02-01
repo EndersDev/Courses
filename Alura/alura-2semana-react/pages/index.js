@@ -1,6 +1,5 @@
 import db from '../db.json'
 import { useRouter } from 'next/router'
-
 import Widget from '../src/components/Widget'
 import {
   QuizLogo,
@@ -30,7 +29,6 @@ export default function Home() {
               onSubmit={(infosDoEvento) => {
                 infosDoEvento.preventDefault()
                 router.push(`/quiz?name=${name}`)
-                //console.log('Fazendo uma submissão por meio do react')
               }}
             >
               <Input
@@ -47,25 +45,13 @@ export default function Home() {
               </Button>
               <br />
               <br />
-              <label>Jogador: {name || db.player}</label>
+              <label>Jogador: {db.player && name}</label>
             </form>
           </Widget.Content>
         </Widget>
 
         <Widget>
-          <Widget.Content>
-            <h1>Outros Quizes</h1>
-
-            <p>
-              <ul>
-                <ui>Quiz de Quimica</ui>
-                <ui>Quiz de Quimica</ui>
-                <ui>Quiz de Quimica</ui>
-                <ui>Quiz de Quimica</ui>
-                <ui>Quiz de Quimica</ui>
-              </ul>
-            </p>
-          </Widget.Content>
+          <Widget.Content>outros quizzes</Widget.Content>
         </Widget>
         <Footer />
       </QuizContainer>

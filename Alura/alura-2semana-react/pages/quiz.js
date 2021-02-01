@@ -7,6 +7,8 @@ import {
 } from '../src/components/Quizzes'
 import { Button } from '../src/components/StartForm'
 
+/*TESTAR USAR OS PARAMETROS DO CHILDREN COMPONENT QUESTIONWIDGET*/
+
 //tela carregamento
 function LoadingWidget() {
   return (
@@ -18,22 +20,7 @@ function LoadingWidget() {
 }
 
 //questoes
-function QuestionWidget({ pageState }) {
-  const totalQuestions = db.questions.length
-  const [currentQuestion, setCurrentQuestion] = React.useState(0)
-  const questionIndex = currentQuestion
-  const question = db.questions[questionIndex]
-
-  const handleSubmitQuiz = () => {
-    //page resolve
-    const nextQuestion = questionIndex + 1
-    if (nextQuestion < totalQuestions) {
-      setCurrentQuestion(nextQuestion)
-    } else {
-      pageState()
-    }
-  }
-
+function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
   const questionId = `question__${questionIndex}`
   return (
     <Widget>
@@ -53,11 +40,10 @@ function QuestionWidget({ pageState }) {
       <Widget.Content>
         <h2>{question.title}</h2>
         <p>{question.description}</p>
-
         <form
-          onSubmit={(infosDoEvento) => {
-            infosDoEvento.preventDefault()
-            handleSubmitQuiz()
+          onSubmit={(event) => {
+            event.preventDefault()
+            onSubmit() //isso vem da props
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
@@ -65,7 +51,7 @@ function QuestionWidget({ pageState }) {
             return (
               <Widget.Topic as="label" htmlFor={alternativeId}>
                 <input
-                  // style={{ display: 'none' }}
+                  // style={{ display: 'none' }}//do i want this?
                   id={alternativeId}
                   name={questionId}
                   type="radio"
@@ -76,7 +62,8 @@ function QuestionWidget({ pageState }) {
           })}
           {/* <pre>
             {JSON.stringify(question, null, 4)}
-          </pre> */}
+          </pre> */
+          /*what??*/}
           <Button type="submit">Confirmar</Button>
         </form>
       </Widget.Content>
@@ -92,35 +79,43 @@ const screenStates = {
 
 export default function QuizPage() {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING)
-  //const [hits, setHits] = React.useState(0)
-  // [React chama de: Efeitos || Effects]
-  // React.useEffect
-  // atualizado === willUpdate
-  // morre === willUnmount
-
-  // const verify = (hits) => {
-  //   setScreenState(screenStates.QUIZ)
-  //   setHits(hits)
-  // }
+  const totalQuestions = db.questions.length
+  const [currentQuestion, setCurrentQuestion] = React.useState(0)
+  const questionIndex = currentQuestion
+  const question = db.questions[questionIndex]
 
   React.useEffect(() => {
-    // fetch() ...
     setTimeout(() => {
       setScreenState(screenStates.QUIZ)
     }, 1 * 1000)
-    // nasce === didMount
   }, [])
+
+  function handleSubmitQuiz() {
+    const nextQuestion = questionIndex + 1
+    if (nextQuestion < totalQuestions) {
+      setCurrentQuestion(nextQuestion)
+    } else {
+      setScreenState(screenStates.RESULT)
+    }
+  }
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
-        {screenState === screenStates.LOADING && <LoadingWidget />}
         {screenState === screenStates.QUIZ && (
-          <QuestionWidget pageState={setScreenState()} />
+          <QuestionWidget
+            question={question}
+            questionIndex={questionIndex}
+            totalQuestions={totalQuestions}
+            onSubmit={handleSubmitQuiz}
+          />
         )}
+
+        {screenState === screenStates.LOADING && <LoadingWidget />}
+
         {screenState === screenStates.RESULT && (
-          <div>Você acertou {hits} questões, parabéns!</div>
+          <div>Você acertou X questões, parabéns!</div>
         )}
       </QuizContainer>
     </QuizBackground>
