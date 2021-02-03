@@ -1,0 +1,39 @@
+<template>
+  <custom-header @create-account="handleAccountCreate" @login="handleLogin" />
+  <contact />
+  <div class="flex justify-center py-10 bg-brand-gray">
+    <p class="font-medium text-center text-gray800">feedbacker © 2021</p>
+  </div>
+</template>
+
+<script>
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import CustomHeader from './CustomHeader'
+import Contact from './Contact'
+
+export default {
+  components: { CustomHeader, Contact },
+  setup() {
+    // funções
+    const router = useRouter()
+    onMounted(() => {
+      // quando for criado
+      const token = window.localStorage.getItem('token')
+      if (token) {
+        // ver se ja tem um token de login
+        router.push({ name: 'Feedbacks' }) // avança pro feedback
+      }
+    }) /* 
+    function handleLogin () {}
+    function handleAccountCreate () {}
+
+    return {
+      handleLogin,
+      handleAccountCreate
+    } */
+  }
+}
+</script>
+
+<style></style>
