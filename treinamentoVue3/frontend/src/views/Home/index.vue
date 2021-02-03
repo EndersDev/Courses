@@ -7,6 +7,10 @@
 </template>
 
 <script>
+/* eslint no-trailing-spaces: "error" */
+/* eslint space-before-function-paren: ["error", "never"] */
+/* eslint-env es6 */
+
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import CustomHeader from './CustomHeader'
@@ -24,7 +28,8 @@ export default {
         // ver se ja tem um token de login
         router.push({ name: 'Feedbacks' }) // avança pro feedback
       }
-    }) /* 
+    })
+    /* funções
     function handleLogin () {}
     function handleAccountCreate () {}
 
