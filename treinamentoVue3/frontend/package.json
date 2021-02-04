@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "tiny-emitter": "^2.1.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
@@ -40,7 +41,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0-0",
-    "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
   },
   "eslintConfig": {
@@ -79,5 +79,10 @@
     "transform": {
       "^.+\\.vue$": "vue-jest"
     }
+  },
+  "babel": {
+    "presets": [
+      "@vue/cli-plugin-babel/preset"
+    ]
   }
 }

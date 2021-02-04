@@ -3,18 +3,22 @@
     <div class="header-group">
       <div class="flex items-center justify-between py-10">
         <div class="w-28 lg:w-36">
-          <img class="w-full" src="../../assets/logo_white.png" alt="logo" />
+          <img
+            class="w-full"
+            src="../../assets/images/logo_white.png"
+            alt="logo"
+          />
         </div>
 
         <div class="flex">
           <button
             class="px-6 py-2 font-bold rounded-full text-white focus:outline-none"
-          >
+          @click="()=>emit('createAccount')">
             Crie uma conta
           </button>
           <button
             class="px-6 py-2 font-bold bg-white rounded-full text-brand-main focus:outline-none"
-          >
+          @click="()=>emit('login')">
             Entrar
           </button>
         </div>
@@ -44,7 +48,14 @@
 </template>
 
 <script>
-export default {}
+/* eslint space-before-function-paren: ["error", "never"] */
+/* eslint-env es6 */
+export default {
+
+  setup(_, { emit }) {
+    return { emit }
+  }
+}
 </script>
 
 <style lang="postcss" scoped>
@@ -57,7 +68,7 @@ export default {}
 }
 @media (min-width: 640px) {
   .header-group {
-    background-image: url(../../assets/blue_baloons.png);
+    background-image: url(../../assets/images/blue_baloons.png);
     background-size: 628px;
     background-position: 90% 100%;
     background-repeat: no-repeat;
