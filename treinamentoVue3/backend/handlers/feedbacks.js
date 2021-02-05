@@ -11,6 +11,7 @@ function CreateFeedbackHandler (db) {
     const {
       type,
       text,
+      apiKey,
       fingerprint,
       device,
       page
@@ -36,6 +37,10 @@ function CreateFeedbackHandler (db) {
       ctx.status = 400
       ctx.body = { error: 'page is empty' }
     }
+    if (!apiKey) {
+      ctx.status = 400
+      ctx.body = { error: 'apiKey is empty' }
+    }
 
     if (!FEEDBACK_TYPES[String(type).toUpperCase()]) {
       ctx.status = 422
@@ -47,6 +52,7 @@ function CreateFeedbackHandler (db) {
       text,
       fingerprint,
       id: uuidv4(),
+      apiKey,
       type: String(type).toUpperCase(),
       device,
       page,
@@ -87,14 +93,13 @@ function CreateFeedbackHandler (db) {
       return user.apiKey.includes(feedback.apiKey)
     })
 
-    let nf = []
     if (type) {
-      nf = feedbacks.filter((feedback) => {
+      feedbacks = feedbacks.filter((feedback) => {
         return feedback.type === String(type).toUpperCase()
       })
     }
 
-    const total = nf.length
+    const total = feedbacks.length
 
     if (limit > 10) {
       limit = 5
