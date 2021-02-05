@@ -26,14 +26,14 @@ import { reactive, onBeforeUnmount, onMounted, defineAsyncComponent } from 'vue'
 import useModal from '../hooks/useModal'
 
 const ModalLogin = defineAsyncComponent(() => import('./ModalLogin'))
-const ModalAccountCreate = defineAsyncComponent(() => import('./ModalAccountCreate'))
+const ModalCreateAccount = defineAsyncComponent(() => import('./ModalCreateAccount'))
 
 const DEFAULT_WIDTH = 'w-3/4 lg:w-1/3'
 
 export default {
   components: {
     ModalLogin,
-    ModalAccountCreate
+    ModalCreateAccount
   },
   setup() {
     const modal = useModal()
@@ -45,6 +45,7 @@ export default {
     })
 
     function handleModalToogle(payload) {
+      console.log(payload)
       if (payload.status) {
         state.component = payload.component
         state.props = payload.props

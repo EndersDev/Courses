@@ -266,7 +266,7 @@ const colors = {
     900: '#0f172a'
   }
 }
-
+//const colors = require('tailwindcss/colors')
 const palette = {
   //nosso palette de cores
   brand: {

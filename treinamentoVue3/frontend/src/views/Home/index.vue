@@ -1,5 +1,5 @@
 <template>
-  <custom-header @create-account="handleAccountCreate" @login="handleLogin" />
+  <custom-header @create-account="handleCreateAccount" @login="handleLogin" />
   <contact />
   <div class="flex justify-center py-10 bg-brand-gray">
     <p class="font-medium text-center text-gray800">feedbacker © 2021</p>
@@ -36,15 +36,15 @@ export default {
         component: 'ModalLogin'
       })
     }
-    function handleAccountCreate() {
+    function handleCreateAccount() {
       modal.open({
-        component: 'ModalAccountCreate'
+        component: 'ModalCreateAccount'
       })
     }
 
     return {
       handleLogin,
-      handleAccountCreate
+      handleCreateAccount
     }
   }
 }
