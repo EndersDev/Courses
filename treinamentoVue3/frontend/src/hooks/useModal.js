@@ -1,5 +1,6 @@
 import bus from '../utils/bus'
-
+/* eslint space-before-function-paren: ["error", "never"] */
+/* eslint-env es6 */
 const EVENT_NAME = 'modal:toggle'
 
 export default function useModal() {
