@@ -9,7 +9,7 @@ function CreateApiKeyHandler (db) {
     const users = await db.readAll('users')
 
     const apiKeyExists = users.map((user) => {
-      return user.apiKey.includes(apikey)
+      return user.apiKey === apikey
     })
 
     if (apiKeyExists.includes(true)) {

@@ -10,10 +10,7 @@ function CreateUserHandler (db) {
       return
     }
 
-    const userResponse = {
-      ...user,
-      apiKey: user.apiKey[user.apiKey.length - 1]
-    }
+    const userResponse = { ...user }
 
     delete userResponse.password
     ctx.status = 200
@@ -24,10 +21,7 @@ function CreateUserHandler (db) {
     const apiKey = uuidv4()
     const { id } = ctx.state.user
 
-    const user = await db.readOneById('users', id)
-    const updated = await db.update('users', id, {
-      apiKey: [...user.apiKey, apiKey]
-    })
+    const updated = await db.update('users', id, { apiKey })
     if (updated) {
       ctx.status = 202
       ctx.body = { apiKey }
@@ -61,7 +55,7 @@ function CreateUserHandler (db) {
       name,
       email,
       password,
-      apiKey: [uuidv4()],
+      apikey: uuidv4(),
       createdAt: new Date().getTime()
     }
 
