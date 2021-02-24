@@ -1,3 +1,4 @@
+
 const Koa = require('koa')
 const Router = require('koa-router')
 const jwt = require('koa-jwt')
@@ -14,8 +15,8 @@ const app = new Koa()
 const router = new Router()
 
 const {
-  JWT_SECRET = '',
-  PORT = 3000
+  JWT_SECRET = process.env.JWT_SECRET_KEY,
+  PORT = 3030
 } = process.env
 const authMiddleware = jwt({ secret: JWT_SECRET })
 app.use(bodyParser())
