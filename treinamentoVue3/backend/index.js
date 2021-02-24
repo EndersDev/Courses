@@ -1,9 +1,9 @@
-
 const Koa = require('koa')
 const Router = require('koa-router')
 const jwt = require('koa-jwt')
 const cors = require('@koa/cors')
 const bodyParser = require('koa-bodyparser')
+require('dotenv').config()
 
 const database = require('./database')
 const CreateUserHandler = require('./handlers/users')
@@ -14,10 +14,7 @@ const CreateApiKeyHandler = require('./handlers/apikey')
 const app = new Koa()
 const router = new Router()
 
-const {
-  JWT_SECRET = process.env.JWT_SECRET_KEY,
-  PORT = 3030
-} = process.env
+const { JWT_SECRET, PORT } = process.env
 const authMiddleware = jwt({ secret: JWT_SECRET })
 app.use(bodyParser())
 app.use(cors())
@@ -27,7 +24,7 @@ const usersHandler = CreateUserHandler(database)
 const authHandler = CreateAuthHandler(database)
 const apiKeyHandler = CreateApiKeyHandler(database)
 
-router.get('/', (ctx) => {
+router.get('/', ctx => {
   ctx.status = 200
   ctx.body = { message: new Date() }
 })
