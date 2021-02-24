@@ -8,7 +8,7 @@ import FeedbacksService from '../views/Feedbacks' */
 const API_ENVS = {
   production: '',
   development: '',
-  local: 'http://localhost:3030'
+  local: 'http://localhost:3000'
 }
 
 const httpClient = axios.create({
