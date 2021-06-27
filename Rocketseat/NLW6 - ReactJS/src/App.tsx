@@ -1,9 +1,8 @@
-import './App.css'
-
+import { Button } from "./Components/Button";
 function App() {
   return (
     <div className="App">
-      <h1>wtf 😁</h1>
+      <Button/>
     </div>
   )
 }
